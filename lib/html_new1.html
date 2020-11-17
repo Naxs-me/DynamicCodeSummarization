@@ -1,7 +1,3 @@
-269     print('''
- <br>
-350 	''')
- <br>
 
 		<!DOCTYPE html>
 		<html>
@@ -11,13 +7,16 @@
         <style>
         .slideshow-container {
             position: relative;
-            background: #f1f1f1f1;
+            background: rgba(0, 128, 0, 0.1);;
             }
 
             /* Slides */
             .mySlides {
             display: none;
-            padding: 80px;
+            margin:5px;
+            padding: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             }
 
             /* Next & previous buttons */
@@ -26,9 +25,9 @@
             position: absolute;
             top: 50%;
             width: auto;
-            margin-top: -30px;
-            padding: 16px;
-            color: #888;
+            margin-top: -20px;
+            padding: 5px;
+            color: rgba(0, 128, 0, 0.8);
             font-weight: bold;
             font-size: 20px;
             border-radius: 0 3px 3px 0;
@@ -44,7 +43,6 @@
 
             /* On hover, add a black background color with a little bit see-through */
             .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
             color: white;
             }
 
@@ -85,231 +83,227 @@
 		<p>Open and collapse the accordian to see the summary</p>
 	
 
-		</div>
-		<p>function htmlInit returned None</p>
+		<button onclick="myFunction('Demo0')" class="w3-btn w3-block w3-green w3-left-align"><module> called calc_profit with arguments<br>profit -> [5, 8, 7, 1, 12, 3, 4]<br>weight -> [2, 7, 1, 6, 4, 2, 5]<br>max_weight -> 100</button>
+    	<div id="Demo0" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
 		
-
-		<button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-black w3-left-align">main called calc_profit with arguments<br>profit -> [5, 8, 7, 1, 12, 3, 4]<br>weight -> [2, 7, 1, 6, 4, 2, 5]<br>max_weight -> 100</button>
-    	<div id="Demo3" class="w3-container w3-hide">
-		
-&emsp; profit = [5, 8, 7, 1, 12, 3, 4] is introduced <br>
-&emsp; weight = [2, 7, 1, 6, 4, 2, 5] is introduced <br>
-&emsp; max_weight = 100 is introduced <br>
-196     if len(profit) != len(weight):
- <br>
-198     if max_weight <= 0:
- <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">profit = [5, 8, 7, 1, 12, 3, 4] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">weight = [2, 7, 1, 6, 4, 2, 5] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">max_weight = 100 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">23</div> <div style="display:inline-block;">    if len(profit) != len(weight):
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">25</div> <div style="display:inline-block;">    if max_weight <= 0:
+</div> <br>
 <div id = "ss0" class="slideshow-container">
-<div class="mySlides">
-200     if any(p < 0 for p in profit):
- <br>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">27</div> <div style="display:inline-block;">    if any(p < 0 for p in profit):
+</div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,0)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,0)">&#10095;</a>
 </div>
 <div id = "ss1" class="slideshow-container">
-<div class="mySlides">
-202     if any(w < 0 for w in weight):
- <br>
+<div id="ms1" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">29</div> <div style="display:inline-block;">    if any(w < 0 for w in weight):
+</div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,1)">&#10095;</a>
 </div>
 <div id = "ss2" class="slideshow-container">
-<div class="mySlides">
-207     profit_by_weight = [p / w for p, w in zip(profit, weight)]
- <br>
-&emsp; profit_by_weight = [2.5, 1.1428571428571428, 7.0, 0.16666666666666666, 3.0, 1.5, 0.8] is introduced <br>
+<div id="ms2" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">34</div> <div style="display:inline-block;">    profit_by_weight = [p / w for p, w in zip(profit, weight)]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">profit_by_weight = [2.5, 1.1428571428571428, 7.0, 0.16666666666666666, 3.0, 1.5, 0.8] is introduced.</div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,2)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,2)">&#10095;</a>
 </div>
-210     sorted_profit_by_weight = sorted(profit_by_weight)
- <br>
-&emsp; sorted_profit_by_weight = [0.16666666666666666, 0.8, 1.1428571428571428, 1.5, 2.5, 3.0, 7.0] is introduced <br>
-213     length = len(sorted_profit_by_weight)
- <br>
-&emsp; length = 7 is introduced <br>
-214     limit = 0
- <br>
-&emsp; limit = 0 is introduced <br>
-215     gain = 0
- <br>
-&emsp; gain = 0 is introduced <br>
-216     i = 0
- <br>
-&emsp; i = 0 is introduced <br>
+<div style="display:inline-block;width:50px;color:teal">37</div> <div style="display:inline-block;">    sorted_profit_by_weight = sorted(profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">sorted_profit_by_weight = [0.16666666666666666, 0.8, 1.1428571428571428, 1.5, 2.5, 3.0, 7.0] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">40</div> <div style="display:inline-block;">    length = len(sorted_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">length = 7 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">41</div> <div style="display:inline-block;">    limit = 0
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 0 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">42</div> <div style="display:inline-block;">    gain = 0
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 0 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">43</div> <div style="display:inline-block;">    i = 0
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 0 is introduced.</div> <br>
 <div id = "ss3" class="slideshow-container">
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 7.0 is introduced <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 2 is introduced <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 0 -> 1 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 0 -> 7 <br>
-246         i += 1
- <br>
-&emsp; i = 0 -> 1 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 7.0 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 2 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 0 -> 1</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 0 -> 7</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 0 -> 1</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 7.0 -> 3.0 <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 2 -> 4 <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 1 -> 5 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 7 -> 19 <br>
-246         i += 1
- <br>
-&emsp; i = 1 -> 2 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 7.0 -> 3.0</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 2 -> 4</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 1 -> 5</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 7 -> 19</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 1 -> 2</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 3.0 -> 2.5 <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 4 -> 0 <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 5 -> 7 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 19 -> 24 <br>
-246         i += 1
- <br>
-&emsp; i = 2 -> 3 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 3.0 -> 2.5</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 4 -> 0</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 5 -> 7</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 19 -> 24</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 2 -> 3</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 2.5 -> 1.5 <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 0 -> 5 <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 7 -> 9 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 24 -> 27 <br>
-246         i += 1
- <br>
-&emsp; i = 3 -> 4 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 2.5 -> 1.5</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 0 -> 5</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 7 -> 9</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 24 -> 27</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 3 -> 4</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 1.5 -> 1.1428571428571428 <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 5 -> 1 <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 9 -> 16 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 27 -> 35 <br>
-246         i += 1
- <br>
-&emsp; i = 4 -> 5 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 1.5 -> 1.1428571428571428</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 5 -> 1</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 9 -> 16</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 27 -> 35</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 4 -> 5</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 1.1428571428571428 -> 0.8 <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 1 -> 6 <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 16 -> 21 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 35 -> 39 <br>
-246         i += 1
- <br>
-&emsp; i = 5 -> 6 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 1.1428571428571428 -> 0.8</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 1 -> 6</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 16 -> 21</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 35 -> 39</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 5 -> 6</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
-221         biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
- <br>
-&emsp; biggest_profit_by_weight = 0.8 -> 0.16666666666666666 <br>
-230         index = profit_by_weight.index(biggest_profit_by_weight)
- <br>
-&emsp; index = 6 -> 3 <br>
-231         profit_by_weight[index] = -1
- <br>
-235         if max_weight - limit >= weight[index]:
- <br>
-236             limit += weight[index]
- <br>
-&emsp; limit = 21 -> 27 <br>
-239             gain += 1 * profit[index]
- <br>
-&emsp; gain = 39 -> 40 <br>
-246         i += 1
- <br>
-&emsp; i = 6 -> 7 <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 0.8 -> 0.16666666666666666</div> <br>
+<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 6 -> 3</div> <br>
+<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 21 -> 27</div> <br>
+<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 39 -> 40</div> <br>
+<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 6 -> 7</div> <br>
 </div>
-<div class="mySlides">
-219     while limit <= max_weight and i < length:
- <br>
+<div id="ms3" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+</div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,3)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,3)">&#10095;</a>
 </div>
-247     return gain
- <br>
+<div style="display:inline-block;width:50px;color:teal">74</div> <div style="display:inline-block;">    return gain
+</div> <br>
 
 		</div>
 		<p>function calc_profit returned 40</p>
@@ -324,30 +318,32 @@ function myFunction(id) {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-var slideIndex = 1;
-var ind = 0;
+var slideIndex = new Array(ss_count).fill(1);
+var ind = 1;
 for(ind = 0; ind < ss_count; ind++){
-    showSlides(slideIndex,ind);
+    showSlides(slideIndex[ind],ind);
 }
 
 
 function plusSlides(n,i) {
-  showSlides(slideIndex += n,i);
+  showSlides(slideIndex[i] += n,i);
 }
 
 function currentSlide(n,i) {
-  showSlides(slideIndex = n,i);
+  showSlides(slideIndex[i] = n,i);
 }
 
 function showSlides(n,i) {
-  var i;
-  var slides = document.getElementById("ss"+i).getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  var k;
+  //var slides = document.getElementById("ss"+i).getElementsByClassName("m);
+  var slides = document.getElementById("ss"+i).querySelectorAll('#ms'+i);
+  console.log(slides)
+  if (n > slides.length) {slideIndex[i] = 1}
+    if (n < 1) {slideIndex[i] = slides.length}
+    for (k = 0; k < slides.length; k++) {
+      slides[k].style.display = "none";
     }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex[i]-1].style.display = "block";
 }
 </script>
 </body>

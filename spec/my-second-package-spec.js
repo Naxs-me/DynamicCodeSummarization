@@ -6,8 +6,9 @@ import MySecondPackage from '../lib/my-second-package';
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
-
+console.log("print");
 describe('MySecondPackage', () => {
+  console.log("spec");
   let workspaceElement, activationPromise;
 
   beforeEach(() => {

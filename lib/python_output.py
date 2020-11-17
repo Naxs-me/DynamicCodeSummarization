@@ -5,6 +5,7 @@ from sys import settrace
 import sys
 import re
 
+
 f = 0
 current_variables = {}
 tab = 0
@@ -50,18 +51,9 @@ def my_tracer(frame, event, arg=None):
         for j, k in frame.f_locals.items():
             call_entry += "<br>" + str(j) + " -> " + str(k)
         print('''
-		<button onclick="myFunction('Demo%s')" class="w3-btn w3-block w3-black w3-left-align">%s</button>
-    	<div id="Demo%s" class="w3-container w3-hide">
+		<button onclick="myFunction('Demo%s')" class="w3-btn w3-block w3-green w3-left-align">%s</button>
+    	<div id="Demo%s" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
 		''' % (tab, call_entry, tab))
-        if func_name == "merge_sort":
-            print('''<p>Description: <br>Pure implementation of the merge sort algorithm in Python<br>
-			:param collection: some mutable ordered collection with heterogeneous comparable items inside<br>
-			:return: the same collection ordered by ascending</p>''')
-        if func_name == 'merge':
-            print('''<p>Description: <br>merge left and right<br>
-        :param left: left collection<br>
-        :param right: right collection<br>
-        :return: merge result<p>''')
 
         tab += 1
     if event == 'return':
@@ -82,10 +74,14 @@ def my_tracer(frame, event, arg=None):
         for var in new_variables:
             if var not in current_variables:
                 # print("temp",current_variables)
-                print("&emsp;",var,"=",new_variables[var],"is introduced <br>")
+                print("<div style=\"display:inline-block;width:50px;\"></div>", "<div style=\"display:inline-block;\">%s</div>" % (var + " = " + str(new_variables[var]) + " is introduced."),"<br>")
+                #print("&nbsp;"*8,var,"=",new_variables[var],"is introduced <br>")
+
             else:
                 if new_variables[var] != current_variables[var]:
-                    print("&emsp;",var,"=",current_variables[var],"->",new_variables[var],"<br>")
+                    print("<div style=\"display:inline-block;width:50px;\"></div>", "<div style=\"display:inline-block;\">%s</div>" % (var + " = " + str(current_variables[var]) + " -> " + str(new_variables[var])),"<br>")
+                    #print("&emsp;",var,"=",current_variables[var],"->",new_variables[var],"<br>")
+
 
         curr_indent = 0
         for c in curr_code:
@@ -133,7 +129,7 @@ def my_tracer(frame, event, arg=None):
                 print("<div id = \"ss%s\" class=\"slideshow-container\">" % (slideShowId))
                 slideShowId+=1
             # print(whileloopID)
-            print("<div class=\"mySlides\">")
+            print("<div id=\"ms%s\" class=\"mySlides\">" % (whileloopID[-1][2]))
             # print("enter loop")
 
         if inForLoop and curr_indent < forloopID[-1][1]+4 and forloopID[-1][:2]!=[line_no,indentFor]:
@@ -159,13 +155,14 @@ def my_tracer(frame, event, arg=None):
                 print("<div id = \"ss%s\" class=\"slideshow-container\">" % (slideShowId))
                 slideShowId+=1
             # print(whileloopID)
-            print("<div class=\"mySlides\">")
+            print("<div id=\"ms%s\" class=\"mySlides\">" % (forloopID[-1][2]))
             # print("enter loop")
 
 
 
         # print("old",current_variables)
-        print(str(line_no), curr_code ,"<br>")
+        #print(str(line_no-267),"&nbsp;"*(6-len(str(line_no))) ,curr_code ,"<br>")
+        print("<div style=\"display:inline-block;width:50px;color:teal\">%s</div>" % (str(line_no-259)), "<div style=\"display:inline-block;\">%s</div>" % (curr_code),"<br>")
         current_variables = new_variables.copy()
         # print("new",current_variables)
         # print(event + ' ' + str(code.co_names) + " line no " + str(line_no))
@@ -175,11 +172,100 @@ def my_tracer(frame, event, arg=None):
     return my_tracer
 
 
+def htmlInit():
+    f = open("html_new1.html", 'w')
+    sys.stdout = f
+    print('''
+		<!DOCTYPE html>
+		<html>
+		<title>ICSE DEMO 2021</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        .slideshow-container {
+            position: relative;
+            background: rgba(0, 128, 0, 0.1);;
+            }
+
+            /* Slides */
+            .mySlides {
+            display: none;
+            margin:5px;
+            padding: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -20px;
+            padding: 5px;
+            color: rgba(0, 128, 0, 0.8);
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+            position: absolute;
+            right: 0;
+            border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+            color: white;
+            }
+
+            /* The dot/bullet/indicator container */
+            .dot-container {
+            text-align: center;
+            padding: 20px;
+            background: #ddd;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            }
+
+            /* Add a background color to the active dot/circle */
+            .active, .dot:hover {
+            background-color: #717171;
+            }
+
+            /* Add an italic font style to all quotes */
+            q {font-style: italic;}
+
+            /* Add a blue color to the author */
+            .author {color: cornflowerblue;}
+        </style>
+		<body>
+		<div class="w3-container">
+
+		<h2>Example</h2>
+		<p>Open and collapse the accordian to see the summary</p>
+	''')
+
+
+htmlInit()
+
 settrace(my_tracer)
 
-
-
-
+#Calculate the maximum profit that can be earned by a merchant such that weight limit is not exceeded.
 
 def calc_profit(profit: list, weight: list, max_weight: int) -> int:
     """
@@ -246,112 +332,14 @@ def calc_profit(profit: list, weight: list, max_weight: int) -> int:
         i += 1
     return gain
 
+profit = [int(x) for x in "5 8 7 1 12 3 4".split()]
+weight = [int(x) for x in "2 7 1 6 4 2 5".split()]
+max_weight = 100
 
-def main():
-        # l = [[4,2,5,6,10,15,4,8,3],[0, 5, 3, 2, 2],[-2, -5, -45]]
-
-        # for i in l:
-        # 	print("<p>For input " + str(i) + "</p>")
-        # 	temp = merge_sort([4,2,5,6,10,15,4,8,3])
-        # 	print("<p>Output is " + str(temp) + "</p><hr style=\"height:2px;border-width:0;color:gray;background-color:gray\">")
-
-    profit = [int(x) for x in "5 8 7 1 12 3 4".split()]
-    weight = [int(x) for x in "2 7 1 6 4 2 5".split()]
-    max_weight = 100
-
-    # Function Call
-    calc_profit(profit, weight, max_weight)
+# Function Call
+calc_profit(profit, weight, max_weight)
 
 
-def htmlInit():
-    f = open("html_new1.html", 'w')
-    sys.stdout = f
-    print('''
-		<!DOCTYPE html>
-		<html>
-		<title>ICSE DEMO 2021</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style>
-        .slideshow-container {
-            position: relative;
-            background: #f1f1f1f1;
-            }
-
-            /* Slides */
-            .mySlides {
-            display: none;
-            padding: 80px;
-            }
-
-            /* Next & previous buttons */
-            .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -30px;
-            padding: 16px;
-            color: #888;
-            font-weight: bold;
-            font-size: 20px;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            }
-
-            /* Position the "next button" to the right */
-            .next {
-            position: absolute;
-            right: 0;
-            border-radius: 3px 0 0 3px;
-            }
-
-            /* On hover, add a black background color with a little bit see-through */
-            .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
-            color: white;
-            }
-
-            /* The dot/bullet/indicator container */
-            .dot-container {
-            text-align: center;
-            padding: 20px;
-            background: #ddd;
-            }
-
-            /* The dots/bullets/indicators */
-            .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-            }
-
-            /* Add a background color to the active dot/circle */
-            .active, .dot:hover {
-            background-color: #717171;
-            }
-
-            /* Add an italic font style to all quotes */
-            q {font-style: italic;}
-
-            /* Add a blue color to the author */
-            .author {color: cornflowerblue;}
-        </style>
-		<body>
-		<div class="w3-container">
-
-		<h2>Example</h2>
-		<p>Open and collapse the accordian to see the summary</p>
-	''')
-
-
-htmlInit()
-main()
 print('''<script>
 var ss_count = %s;
 function myFunction(id) {
@@ -362,30 +350,32 @@ function myFunction(id) {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-var slideIndex = 1;
-var ind = 0;
+var slideIndex = new Array(ss_count).fill(1);
+var ind = 1;
 for(ind = 0; ind < ss_count; ind++){
-    showSlides(slideIndex,ind);
+    showSlides(slideIndex[ind],ind);
 }
 
 
 function plusSlides(n,i) {
-  showSlides(slideIndex += n,i);
+  showSlides(slideIndex[i] += n,i);
 }
 
 function currentSlide(n,i) {
-  showSlides(slideIndex = n,i);
+  showSlides(slideIndex[i] = n,i);
 }
 
 function showSlides(n,i) {
-  var i;
-  var slides = document.getElementById("ss"+i).getElementsByClassName("mySlides");
-  if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  var k;
+  //var slides = document.getElementById("ss"+i).getElementsByClassName("m);
+  var slides = document.getElementById("ss"+i).querySelectorAll('#ms'+i);
+  console.log(slides)
+  if (n > slides.length) {slideIndex[i] = 1}
+    if (n < 1) {slideIndex[i] = slides.length}
+    for (k = 0; k < slides.length; k++) {
+      slides[k].style.display = "none";
     }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex[i]-1].style.display = "block";
 }
 </script>
 </body>
