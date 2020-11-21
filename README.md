@@ -64,6 +64,7 @@ In the keymaps directory,
 2. Open the working code snippet that needs to be summarized.
 3. Press ctrl-alt-q to generate the summary.
 A window will open which contains the summary of the code.
+Note: Please ensure that the code to be summarized is enclosed in a function.
 
 ## How to contribute to *COSPEX*:
 We will be very happy to receive any kind of contributions. Incase of a bug or an enhancement idea or a feature improvement idea, please open an issue or a pull request. Incase of any queries or if you would like to give any suggestions, please feel free to contact Nakshatra Gupta (cs17b020@iittp.ac.in), Ashutosh Rajput (cs17b007@iittp.ac.in) or Sridhar Chimalakonda (ch@iittp.ac.in) of RISHA Lab, IIT Tirupati, India.
