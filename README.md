@@ -1,21 +1,23 @@
-# COSPEX - Code Summarization via Program Execution
+# *COSPEX* - Code Summarization via Program Execution
 
-## What is COSPEX?
-1. COSPEX, is an *Atom* IDE extension, that generates summaries for Python code snippets dynamically.
+## What is *COSPEX*?
+1. *COSPEX*, is an *Atom* IDE extension, that generates summaries for Python code snippets dynamically.
 2. The current version takes source code snippet and test cases as input from developers.
-3. Automated test case inputs can be added in the future to COSPEX.
+3. Automated test case inputs can be added in the future to *COSPEX*.
 
-## Features of COSPEX:
-1. COSPEX dynamically extracts dynamic information such as inputs, outputs, comments (if present in the snippet) alongwith changes in variable values during runtime. 
+## Features of *COSPEX*:
+1. *COSPEX* dynamically extracts dynamic information such as inputs, outputs, comments (if present in the snippet) alongwith changes in variable values during runtime. 
 2. Presents the dynamic information in the form of examples to the developers while also adding natural language phrases using pre-defined templates.
-3. Provides sliding window interface for loops where each window represents an iteration of the loop.
+3. Provides interactive interface such as colapsible blocks, which when clicked upon, reveal lower level information of the particular function call. 
+4. A sliding window interface for loops is also provided where each window represents an iteration of the loop.
 
-## Uses of COSPEX:
+## Uses of *COSPEX*:
 Developers rely on code documentation to understand the functionality of the code snippet. However, manually creating and maintaining the documentation is effort-intensive and prone to errors. 
-COSPEX aids developers to automatically generate summaries of the code snippets dynamically.
-With the help of COSPEX, developers can summarize the code snippet at hand from the editor environment itself.
-## Working of COSPEX:
-COSPEX is developed as a package for Atom using the following approach:
+*COSPEX* aids developers to automatically generate summaries of the *Python* code snippets dynamically.
+With the help of *COSPEX*, developers can summarize the code snippet at hand from the editor environment itself. 
+*COSPEX* also presents information of the data-flow inside a method to the users.
+## Working of *COSPEX*:
+*COSPEX* is developed as a package for Atom using the following approach:
 
 <img alt="approach" src="https://user-images.githubusercontent.com/35232831/99877164-24a16800-2c22-11eb-9012-5b70841c7216.jpeg">
 
@@ -32,4 +34,24 @@ COSPEX is developed as a package for Atom using the following approach:
 
 ## Summary generated for QuickSort program:
 <img width=500 alt="classes" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
+## Important files in *COSPEX* Repository:
+In the lib folder,   
+"my-second-package.js" file contains all the source code related to activating and deactivating the package, extracting user's code, combining it into the hook and initiating summary generation.
+"injectCodepython.txt" file includes the code related to tracing the execution of the input code snippet.
+"my-second-package.json" file contains the shortcut key to trigger the package.
 
+## Steps to install *COSPEX*:
+1. Download and install *Atom* on your local machine.
+2. Download the repository on your local machine.  
+3. Unzip the folder and extract the package to the package repository of *Atom*(Default for Windows: C:\Users\<user_name>\.atom\packages\)
+4. Run "npm install" inside the package directory.
+5. Open Atom or refresh Atom if it was already open.
+
+## Steps to use *COSPEX*:
+1. Open Atom or refresh Atom if it was already open.
+2. Open the working code snippet that needs to be summarized.
+3. Press ctrl-alt-q to generate the summary.
+A window will open which contains the summary of the code.
+
+## How to contribute to *COSPEX*:
+We will be very happy to receive any kind of contributions. Incase of a bug or an enhancement idea or a feature improvement idea, please open an issue or a pull request. Incase of any queries or if you would like to give any suggestions, please feel free to contact Nakshatra Gupta (cs17b020@iittp.ac.in), Ashutosh Rajput (cs17b007@iittp.ac.in) or Sridhar Chimalakonda (ch@iittp.ac.in) of RISHA Lab, IIT Tirupati, India.
