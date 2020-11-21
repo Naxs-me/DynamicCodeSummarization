@@ -41,8 +41,10 @@ With the help of *COSPEX*, developers can summarize the code snippet at hand fro
 In the lib folder,   
 "my-second-package.js" file contains all the source code related to activating and deactivating the package, extracting user's code, combining it into the hook and initiating summary generation.
 
+In the lib folder, 
 "injectCodepython.txt" file includes the code related to tracing the execution of the input code snippet.
 
+In the keymap folder,
 "my-second-package.json" file contains the shortcut key to trigger the package.
 
 ## Steps to install *COSPEX*:
