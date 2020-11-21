@@ -31,5 +31,5 @@ COSPEX is developed as a package for Atom using the following approach:
 
 
 ## Summary generated for QuickSort program:
-<img alt="classes" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
+<img width=250 alt="classes" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
 
