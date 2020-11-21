@@ -55,7 +55,7 @@ In the keymaps directory,
 ## Steps to install *COSPEX*:
 1. Download and install *Atom* on your local machine.
 2. Download the repository on your local machine.  
-3. Unzip the folder and extract the package to the package repository of *Atom*(Default for Windows: C:\Users\<user_name>\ .atom\packages\ )
+3. Unzip the folder and extract the package to the package repository of *Atom*(Default for Windows: C:/Users/user_name>/.atom/packages/ )
 4. Run "npm install" inside the package directory.
 5. Open Atom or refresh Atom if it was already open.
 
