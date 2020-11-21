@@ -13,7 +13,9 @@
 
 ## Uses of *COSPEX*:
 Developers rely on code documentation to understand the functionality of the code snippet. However, manually creating and maintaining the documentation is effort-intensive and prone to errors. 
+
 *COSPEX* aids developers to automatically generate summaries of the *Python* code snippets dynamically.
+
 With the help of *COSPEX*, developers can summarize the code snippet at hand from the editor environment itself. 
 *COSPEX* also presents information of the data-flow inside a method to the users.
 ## Working of *COSPEX*:
@@ -38,7 +40,9 @@ With the help of *COSPEX*, developers can summarize the code snippet at hand fro
 ## Important files in *COSPEX* Repository:
 In the lib folder,   
 "my-second-package.js" file contains all the source code related to activating and deactivating the package, extracting user's code, combining it into the hook and initiating summary generation.
+
 "injectCodepython.txt" file includes the code related to tracing the execution of the input code snippet.
+
 "my-second-package.json" file contains the shortcut key to trigger the package.
 
 ## Steps to install *COSPEX*:
