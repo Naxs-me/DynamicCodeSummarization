@@ -1,7 +1,6 @@
-# program to display the functioning of
-# settrace()
 import inspect
 from sys import settrace
+import copy
 import sys
 import re
 
@@ -31,7 +30,6 @@ def my_tracer(frame, event, arg=None):
     global indentFor
     # extracts frame code
     code = frame.f_code
-    # print(code)
 
     # extracts calling function name
     func_name = code.co_name
@@ -40,12 +38,8 @@ def my_tracer(frame, event, arg=None):
 
     # extracts the line number
     line_no = frame.f_lineno
-    # caller = frame.f_back
-    # print(caller)
-    # print(f"A {event} encountered in {func_name}() at line number {line_no} ")
+
     if event == 'call':
-        # if func_name[0] == "<":
-        #     func_name = func_name[1:-1]
         prev_function = getattr(inspect.stack()[2],"function")
         call_entry = prev_function + " " + event + "ed " + func_name + " with arguments"
         for j, k in frame.f_locals.items():
@@ -73,14 +67,11 @@ def my_tracer(frame, event, arg=None):
 
         for var in new_variables:
             if var not in current_variables:
-                # print("temp",current_variables)
                 print("<div style=\"display:inline-block;width:50px;\"></div>", "<div style=\"display:inline-block;\">%s</div>" % (var + " = " + str(new_variables[var]) + " is introduced."),"<br>")
-                #print("&nbsp;"*8,var,"=",new_variables[var],"is introduced <br>")
 
             else:
                 if new_variables[var] != current_variables[var]:
                     print("<div style=\"display:inline-block;width:50px;\"></div>", "<div style=\"display:inline-block;\">%s</div>" % (var + " = " + str(current_variables[var]) + " -> " + str(new_variables[var])),"<br>")
-                    #print("&emsp;",var,"=",current_variables[var],"->",new_variables[var],"<br>")
 
 
         curr_indent = 0
@@ -90,29 +81,18 @@ def my_tracer(frame, event, arg=None):
             else:
                 break
 
-        # if inWhileLoop and curr_indent >= whileloopID[-1][1]+4:
-            # print("inside loop")
         if len(whileloopID)>0 and curr_indent < whileloopID[-1][1]+4:
             print("</div>")
 
         if len(forloopID)>0 and curr_indent < forloopID[-1][1]+4:
             print("</div>")
 
-
-        # if whileloopID[-1][:2]==[line_no,indent]:
-        #     print("<div class=\"mySlides\">")
-        # else:
-
-
-
-            # print("matched",match.group(0),indent,"</br>")
         if inWhileLoop and curr_indent < whileloopID[-1][1]+4 and whileloopID[-1][:2]!=[line_no,indent]:
             inWhileLoop = False
             print("""<a class="prev" onclick="plusSlides(-1,%s)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,%s)">&#10095;</a>
 </div>""" % (whileloopID[-1][2], whileloopID[-1][2]))
 
-            # print("exit loop")
             whileloopID.pop()
 
         if match1 != None:
@@ -125,12 +105,9 @@ def my_tracer(frame, event, arg=None):
                     break
             if len(whileloopID)==0 or whileloopID[-1][:2]!=[line_no,indent]:
                 whileloopID.append([line_no,indent,slideShowId])
-                # print("first encounter")
                 print("<div id = \"ss%s\" class=\"slideshow-container\">" % (slideShowId))
                 slideShowId+=1
-            # print(whileloopID)
             print("<div id=\"ms%s\" class=\"mySlides\">" % (whileloopID[-1][2]))
-            # print("enter loop")
 
         if inForLoop and curr_indent < forloopID[-1][1]+4 and forloopID[-1][:2]!=[line_no,indentFor]:
             inForLoop = False
@@ -138,7 +115,6 @@ def my_tracer(frame, event, arg=None):
 <a class="next" onclick="plusSlides(1,%s)">&#10095;</a>
 </div>""" % (forloopID[-1][2], forloopID[-1][2]))
 
-            # print("exit loop")
             forloopID.pop()
 
         if match2 != None:
@@ -151,23 +127,12 @@ def my_tracer(frame, event, arg=None):
                     break
             if len(forloopID)==0 or forloopID[-1][:2]!=[line_no,indentFor]:
                 forloopID.append([line_no,indentFor,slideShowId])
-                # print("first encounter")
                 print("<div id = \"ss%s\" class=\"slideshow-container\">" % (slideShowId))
                 slideShowId+=1
-            # print(whileloopID)
             print("<div id=\"ms%s\" class=\"mySlides\">" % (forloopID[-1][2]))
-            # print("enter loop")
 
-
-
-        # print("old",current_variables)
-        #print(str(line_no-267),"&nbsp;"*(6-len(str(line_no))) ,curr_code ,"<br>")
-        print("<div style=\"display:inline-block;width:50px;color:teal\">%s</div>" % (str(line_no-259)), "<div style=\"display:inline-block;\">%s</div>" % (curr_code),"<br>")
-        current_variables = new_variables.copy()
-        # print("new",current_variables)
-        # print(event + ' ' + str(code.co_names) + " line no " + str(line_no))
-
-
+        print("<div style=\"display:inline-block;width:50px;color:teal\">%s</div>" % (str(line_no-232)), "<div style=\"display:inline-block;\">%s</div>" % (curr_code),"<br>")
+        current_variables = copy.deepcopy(new_variables)
 
     return my_tracer
 
@@ -294,7 +259,6 @@ function currentSlide(n,i) {
 
 function showSlides(n,i) {
   var k;
-  //var slides = document.getElementById("ss"+i).getElementsByClassName("m);
   var slides = document.getElementById("ss"+i).querySelectorAll('#ms'+i);
   console.log(slides)
   if (n > slides.length) {slideIndex[i] = 1}
@@ -307,7 +271,3 @@ function showSlides(n,i) {
 </script>
 </body>
 </html>''' % (slideShowId))
-
-
-# returns reference to local
-# trace function (my_tracer)

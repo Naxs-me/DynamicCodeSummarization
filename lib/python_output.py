@@ -1,7 +1,6 @@
-# program to display the functioning of
-# settrace()
 import inspect
 from sys import settrace
+import copy
 import sys
 import re
 
@@ -31,7 +30,6 @@ def my_tracer(frame, event, arg=None):
     global indentFor
     # extracts frame code
     code = frame.f_code
-    # print(code)
 
     # extracts calling function name
     func_name = code.co_name
@@ -40,12 +38,8 @@ def my_tracer(frame, event, arg=None):
 
     # extracts the line number
     line_no = frame.f_lineno
-    # caller = frame.f_back
-    # print(caller)
-    # print(f"A {event} encountered in {func_name}() at line number {line_no} ")
+
     if event == 'call':
-        # if func_name[0] == "<":
-        #     func_name = func_name[1:-1]
         prev_function = getattr(inspect.stack()[2],"function")
         call_entry = prev_function + " " + event + "ed " + func_name + " with arguments"
         for j, k in frame.f_locals.items():
@@ -73,14 +67,11 @@ def my_tracer(frame, event, arg=None):
 
         for var in new_variables:
             if var not in current_variables:
-                # print("temp",current_variables)
                 print("<div style=\"display:inline-block;width:50px;\"></div>", "<div style=\"display:inline-block;\">%s</div>" % (var + " = " + str(new_variables[var]) + " is introduced."),"<br>")
-                #print("&nbsp;"*8,var,"=",new_variables[var],"is introduced <br>")
 
             else:
                 if new_variables[var] != current_variables[var]:
                     print("<div style=\"display:inline-block;width:50px;\"></div>", "<div style=\"display:inline-block;\">%s</div>" % (var + " = " + str(current_variables[var]) + " -> " + str(new_variables[var])),"<br>")
-                    #print("&emsp;",var,"=",current_variables[var],"->",new_variables[var],"<br>")
 
 
         curr_indent = 0
@@ -90,29 +81,18 @@ def my_tracer(frame, event, arg=None):
             else:
                 break
 
-        # if inWhileLoop and curr_indent >= whileloopID[-1][1]+4:
-            # print("inside loop")
         if len(whileloopID)>0 and curr_indent < whileloopID[-1][1]+4:
             print("</div>")
 
         if len(forloopID)>0 and curr_indent < forloopID[-1][1]+4:
             print("</div>")
 
-
-        # if whileloopID[-1][:2]==[line_no,indent]:
-        #     print("<div class=\"mySlides\">")
-        # else:
-
-
-
-            # print("matched",match.group(0),indent,"</br>")
         if inWhileLoop and curr_indent < whileloopID[-1][1]+4 and whileloopID[-1][:2]!=[line_no,indent]:
             inWhileLoop = False
             print("""<a class="prev" onclick="plusSlides(-1,%s)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,%s)">&#10095;</a>
 </div>""" % (whileloopID[-1][2], whileloopID[-1][2]))
 
-            # print("exit loop")
             whileloopID.pop()
 
         if match1 != None:
@@ -125,12 +105,9 @@ def my_tracer(frame, event, arg=None):
                     break
             if len(whileloopID)==0 or whileloopID[-1][:2]!=[line_no,indent]:
                 whileloopID.append([line_no,indent,slideShowId])
-                # print("first encounter")
                 print("<div id = \"ss%s\" class=\"slideshow-container\">" % (slideShowId))
                 slideShowId+=1
-            # print(whileloopID)
             print("<div id=\"ms%s\" class=\"mySlides\">" % (whileloopID[-1][2]))
-            # print("enter loop")
 
         if inForLoop and curr_indent < forloopID[-1][1]+4 and forloopID[-1][:2]!=[line_no,indentFor]:
             inForLoop = False
@@ -138,7 +115,6 @@ def my_tracer(frame, event, arg=None):
 <a class="next" onclick="plusSlides(1,%s)">&#10095;</a>
 </div>""" % (forloopID[-1][2], forloopID[-1][2]))
 
-            # print("exit loop")
             forloopID.pop()
 
         if match2 != None:
@@ -151,23 +127,12 @@ def my_tracer(frame, event, arg=None):
                     break
             if len(forloopID)==0 or forloopID[-1][:2]!=[line_no,indentFor]:
                 forloopID.append([line_no,indentFor,slideShowId])
-                # print("first encounter")
                 print("<div id = \"ss%s\" class=\"slideshow-container\">" % (slideShowId))
                 slideShowId+=1
-            # print(whileloopID)
             print("<div id=\"ms%s\" class=\"mySlides\">" % (forloopID[-1][2]))
-            # print("enter loop")
 
-
-
-        # print("old",current_variables)
-        #print(str(line_no-267),"&nbsp;"*(6-len(str(line_no))) ,curr_code ,"<br>")
-        print("<div style=\"display:inline-block;width:50px;color:teal\">%s</div>" % (str(line_no-259)), "<div style=\"display:inline-block;\">%s</div>" % (curr_code),"<br>")
-        current_variables = new_variables.copy()
-        # print("new",current_variables)
-        # print(event + ' ' + str(code.co_names) + " line no " + str(line_no))
-
-
+        print("<div style=\"display:inline-block;width:50px;color:teal\">%s</div>" % (str(line_no-232)), "<div style=\"display:inline-block;\">%s</div>" % (curr_code),"<br>")
+        current_variables = copy.deepcopy(new_variables)
 
     return my_tracer
 
@@ -265,79 +230,21 @@ htmlInit()
 
 settrace(my_tracer)
 
-#Calculate the maximum profit that can be earned by a merchant such that weight limit is not exceeded.
+def quick_sort(collection: list) -> list:
+    if len(collection) < 2:
+        return collection
+    pivot = collection.pop()
+    greater = []
+    lesser = []
+    for element in collection:
+        (greater if element > pivot else lesser).append(element)
+    return quick_sort(lesser) + [pivot] + quick_sort(greater)
 
-def calc_profit(profit: list, weight: list, max_weight: int) -> int:
-    """
-    Function description is as follows-
-    :param profit: Take a list of profits
-    :param weight: Take a list of weight if bags corresponding to the profits
-    :param max_weight: Maximum weight that could be carried
-    :return: Maximum expected gain
-    >>> calc_profit([1, 2, 3], [3, 4, 5], 15)
-    6
-    >>> calc_profit([10, 9 , 8], [3 ,4 , 5], 25)
-    27
-    """
-    if len(profit) != len(weight):
-        raise ValueError("The length of profit and weight must be same.")
-    if max_weight <= 0:
-        raise ValueError("max_weight must greater than zero.")
-    if any(p < 0 for p in profit):
-        raise ValueError("Profit can not be negative.")
-    if any(w < 0 for w in weight):
-        raise ValueError("Weight can not be negative.")
 
-    # List created to store profit gained for the 1kg in case of each weight
-    # respectively.  Calculate and append profit/weight for each element.
-    profit_by_weight = [p / w for p, w in zip(profit, weight)]
-
-    # Creating a copy of the list and sorting profit/weight in ascending order
-    sorted_profit_by_weight = sorted(profit_by_weight)
-
-    # declaring useful variables
-    length = len(sorted_profit_by_weight)
-    limit = 0
-    gain = 0
-    i = 0
-
-    # loop till the total weight do not reach max limit e.g. 15 kg and till i<length
-    while limit <= max_weight and i < length:
-        # flag value for encountered greatest element in sorted_profit_by_weight
-        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
-        """
-        Calculate the index of the biggest_profit_by_weight in profit_by_weight list.
-        This will give the index of the first encountered element which is same as of
-        biggest_profit_by_weight.  There may be one or more values same as that of
-        biggest_profit_by_weight but index always encounter the very first element
-        only.  To curb this alter the values in profit_by_weight once they are used
-        here it is done to -1 because neither profit nor weight can be in negative.
-        """
-        index = profit_by_weight.index(biggest_profit_by_weight)
-        profit_by_weight[index] = -1
-
-        # check if the weight encountered is less than the total weight
-        # encountered before.
-        if max_weight - limit >= weight[index]:
-            limit += weight[index]
-            # Adding profit gained for the given weight 1 ===
-            # weight[index]/weight[index]
-            gain += 1 * profit[index]
-        else:
-            # Since the weight encountered is greater than limit, therefore take the
-            # required number of remaining kgs and calculate profit for it.
-            # weight remaining / weight[index]
-            gain += (max_weight - limit) / weight[index] * profit[index]
-            break
-        i += 1
-    return gain
-
-profit = [int(x) for x in "5 8 7 1 12 3 4".split()]
-weight = [int(x) for x in "2 7 1 6 4 2 5".split()]
-max_weight = 100
-
-# Function Call
-calc_profit(profit, weight, max_weight)
+if __name__ == "__main__":
+    user_input = "32,13,56,24,87,5,44,42".strip()
+    unsorted = [int(item) for item in user_input.split(",")]
+    print(quick_sort(unsorted))
 
 
 print('''<script>
@@ -367,7 +274,6 @@ function currentSlide(n,i) {
 
 function showSlides(n,i) {
   var k;
-  //var slides = document.getElementById("ss"+i).getElementsByClassName("m);
   var slides = document.getElementById("ss"+i).querySelectorAll('#ms'+i);
   console.log(slides)
   if (n > slides.length) {slideIndex[i] = 1}
@@ -380,7 +286,3 @@ function showSlides(n,i) {
 </script>
 </body>
 </html>''' % (slideShowId))
-
-
-# returns reference to local
-# trace function (my_tracer)

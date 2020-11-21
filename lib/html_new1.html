@@ -83,233 +83,360 @@
 		<p>Open and collapse the accordian to see the summary</p>
 	
 
-		<button onclick="myFunction('Demo0')" class="w3-btn w3-block w3-green w3-left-align"><module> called calc_profit with arguments<br>profit -> [5, 8, 7, 1, 12, 3, 4]<br>weight -> [2, 7, 1, 6, 4, 2, 5]<br>max_weight -> 100</button>
+		<button onclick="myFunction('Demo0')" class="w3-btn w3-block w3-green w3-left-align"><module> called quick_sort with arguments<br>collection -> [32, 13, 56, 24, 87, 5, 44, 42]</button>
     	<div id="Demo0" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
 		
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">profit = [5, 8, 7, 1, 12, 3, 4] is introduced.</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">weight = [2, 7, 1, 6, 4, 2, 5] is introduced.</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">max_weight = 100 is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">23</div> <div style="display:inline-block;">    if len(profit) != len(weight):
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13, 56, 24, 87, 5, 44, 42] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
 </div> <br>
-<div style="display:inline-block;width:50px;color:teal">25</div> <div style="display:inline-block;">    if max_weight <= 0:
+<div style="display:inline-block;width:50px;color:teal">4</div> <div style="display:inline-block;">    pivot = collection.pop()
 </div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13, 56, 24, 87, 5, 44, 42] -> [32, 13, 56, 24, 87, 5, 44]</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">pivot = 42 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">5</div> <div style="display:inline-block;">    greater = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">6</div> <div style="display:inline-block;">    lesser = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] is introduced.</div> <br>
 <div id = "ss0" class="slideshow-container">
 <div id="ms0" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">27</div> <div style="display:inline-block;">    if any(p < 0 for p in profit):
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 32 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] -> [32]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 32 -> 13</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [32] -> [32, 13]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 13 -> 56</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] -> [56]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 56 -> 24</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [32, 13] -> [32, 13, 24]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 24 -> 87</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [56] -> [56, 87]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 87 -> 5</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [32, 13, 24] -> [32, 13, 24, 5]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 5 -> 44</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [56, 87] -> [56, 87, 44]</div> <br>
+</div>
+<div id="ms0" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
 </div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,0)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,0)">&#10095;</a>
 </div>
+<div style="display:inline-block;width:50px;color:teal">9</div> <div style="display:inline-block;">    return quick_sort(lesser) + [pivot] + quick_sort(greater)
+</div> <br>
+
+		<button onclick="myFunction('Demo1')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [32, 13, 24, 5]</button>
+    	<div id="Demo1" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13, 56, 24, 87, 5, 44] -> [32, 13, 24, 5]</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">4</div> <div style="display:inline-block;">    pivot = collection.pop()
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13, 24, 5] -> [32, 13, 24]</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">pivot = 5 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">5</div> <div style="display:inline-block;">    greater = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">6</div> <div style="display:inline-block;">    lesser = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] is introduced.</div> <br>
 <div id = "ss1" class="slideshow-container">
 <div id="ms1" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">29</div> <div style="display:inline-block;">    if any(w < 0 for w in weight):
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 32 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] -> [32]</div> <br>
+</div>
+<div id="ms1" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 32 -> 13</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [32] -> [32, 13]</div> <br>
+</div>
+<div id="ms1" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 13 -> 24</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [32, 13] -> [32, 13, 24]</div> <br>
+</div>
+<div id="ms1" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
 </div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,1)">&#10095;</a>
 </div>
+<div style="display:inline-block;width:50px;color:teal">9</div> <div style="display:inline-block;">    return quick_sort(lesser) + [pivot] + quick_sort(greater)
+</div> <br>
+
+		<button onclick="myFunction('Demo2')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> []</button>
+    	<div id="Demo2" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13, 24] -> []</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">3</div> <div style="display:inline-block;">        return collection
+</div> <br>
+
+		</div>
+		<p>function quick_sort returned []</p>
+		
+
+		<button onclick="myFunction('Demo3')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [32, 13, 24]</button>
+    	<div id="Demo3" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [] -> [32, 13, 24]</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">4</div> <div style="display:inline-block;">    pivot = collection.pop()
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13, 24] -> [32, 13]</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">pivot = 24 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">5</div> <div style="display:inline-block;">    greater = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">6</div> <div style="display:inline-block;">    lesser = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] is introduced.</div> <br>
 <div id = "ss2" class="slideshow-container">
 <div id="ms2" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">34</div> <div style="display:inline-block;">    profit_by_weight = [p / w for p, w in zip(profit, weight)]
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">profit_by_weight = [2.5, 1.1428571428571428, 7.0, 0.16666666666666666, 3.0, 1.5, 0.8] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 32 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] -> [32]</div> <br>
+</div>
+<div id="ms2" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 32 -> 13</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] -> [13]</div> <br>
+</div>
+<div id="ms2" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,2)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,2)">&#10095;</a>
 </div>
-<div style="display:inline-block;width:50px;color:teal">37</div> <div style="display:inline-block;">    sorted_profit_by_weight = sorted(profit_by_weight)
+<div style="display:inline-block;width:50px;color:teal">9</div> <div style="display:inline-block;">    return quick_sort(lesser) + [pivot] + quick_sort(greater)
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">sorted_profit_by_weight = [0.16666666666666666, 0.8, 1.1428571428571428, 1.5, 2.5, 3.0, 7.0] is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">40</div> <div style="display:inline-block;">    length = len(sorted_profit_by_weight)
+
+		<button onclick="myFunction('Demo4')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [13]</button>
+    	<div id="Demo4" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32, 13] -> [13]</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">length = 7 is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">41</div> <div style="display:inline-block;">    limit = 0
+<div style="display:inline-block;width:50px;color:teal">3</div> <div style="display:inline-block;">        return collection
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 0 is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">42</div> <div style="display:inline-block;">    gain = 0
+
+		</div>
+		<p>function quick_sort returned [13]</p>
+		
+
+		<button onclick="myFunction('Demo5')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [32]</button>
+    	<div id="Demo5" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [13] -> [32]</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 0 is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">43</div> <div style="display:inline-block;">    i = 0
+<div style="display:inline-block;width:50px;color:teal">3</div> <div style="display:inline-block;">        return collection
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 0 is introduced.</div> <br>
+
+		</div>
+		<p>function quick_sort returned [32]</p>
+		
+
+		</div>
+		<p>function quick_sort returned [13, 24, 32]</p>
+		
+
+		</div>
+		<p>function quick_sort returned [5, 13, 24, 32]</p>
+		
+
+		<button onclick="myFunction('Demo6')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [56, 87, 44]</button>
+    	<div id="Demo6" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [32] -> [56, 87, 44]</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">4</div> <div style="display:inline-block;">    pivot = collection.pop()
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [56, 87, 44] -> [56, 87]</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">pivot = 44 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">5</div> <div style="display:inline-block;">    greater = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">6</div> <div style="display:inline-block;">    lesser = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] is introduced.</div> <br>
 <div id = "ss3" class="slideshow-container">
 <div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
 </div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 56 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 7.0 is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 2 is introduced.</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 0 -> 1</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 0 -> 7</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 0 -> 1</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] -> [56]</div> <br>
 </div>
 <div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
 </div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 56 -> 87</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
 </div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 7.0 -> 3.0</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 2 -> 4</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 1 -> 5</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 7 -> 19</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 1 -> 2</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [56] -> [56, 87]</div> <br>
 </div>
 <div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 3.0 -> 2.5</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 4 -> 0</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 5 -> 7</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 19 -> 24</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 2 -> 3</div> <br>
-</div>
-<div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 2.5 -> 1.5</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 0 -> 5</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 7 -> 9</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 24 -> 27</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 3 -> 4</div> <br>
-</div>
-<div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 1.5 -> 1.1428571428571428</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 5 -> 1</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 9 -> 16</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 27 -> 35</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 4 -> 5</div> <br>
-</div>
-<div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 1.1428571428571428 -> 0.8</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 1 -> 6</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 16 -> 21</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 35 -> 39</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 5 -> 6</div> <br>
-</div>
-<div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">48</div> <div style="display:inline-block;">        biggest_profit_by_weight = sorted_profit_by_weight[length - i - 1]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">biggest_profit_by_weight = 0.8 -> 0.16666666666666666</div> <br>
-<div style="display:inline-block;width:50px;color:teal">57</div> <div style="display:inline-block;">        index = profit_by_weight.index(biggest_profit_by_weight)
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">index = 6 -> 3</div> <br>
-<div style="display:inline-block;width:50px;color:teal">58</div> <div style="display:inline-block;">        profit_by_weight[index] = -1
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">62</div> <div style="display:inline-block;">        if max_weight - limit >= weight[index]:
-</div> <br>
-<div style="display:inline-block;width:50px;color:teal">63</div> <div style="display:inline-block;">            limit += weight[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">limit = 21 -> 27</div> <br>
-<div style="display:inline-block;width:50px;color:teal">66</div> <div style="display:inline-block;">            gain += 1 * profit[index]
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">gain = 39 -> 40</div> <br>
-<div style="display:inline-block;width:50px;color:teal">73</div> <div style="display:inline-block;">        i += 1
-</div> <br>
-<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">i = 6 -> 7</div> <br>
-</div>
-<div id="ms3" class="mySlides">
-<div style="display:inline-block;width:50px;color:teal">46</div> <div style="display:inline-block;">    while limit <= max_weight and i < length:
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
 </div> <br>
 </div>
 <a class="prev" onclick="plusSlides(-1,3)">&#10094;</a>
 <a class="next" onclick="plusSlides(1,3)">&#10095;</a>
 </div>
-<div style="display:inline-block;width:50px;color:teal">74</div> <div style="display:inline-block;">    return gain
+<div style="display:inline-block;width:50px;color:teal">9</div> <div style="display:inline-block;">    return quick_sort(lesser) + [pivot] + quick_sort(greater)
+</div> <br>
+
+		<button onclick="myFunction('Demo7')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> []</button>
+    	<div id="Demo7" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [56, 87] -> []</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">3</div> <div style="display:inline-block;">        return collection
 </div> <br>
 
 		</div>
-		<p>function calc_profit returned 40</p>
+		<p>function quick_sort returned []</p>
 		
+
+		<button onclick="myFunction('Demo8')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [56, 87]</button>
+    	<div id="Demo8" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [] -> [56, 87]</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">4</div> <div style="display:inline-block;">    pivot = collection.pop()
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [56, 87] -> [56]</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">pivot = 87 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">5</div> <div style="display:inline-block;">    greater = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">greater = [] is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">6</div> <div style="display:inline-block;">    lesser = []
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] is introduced.</div> <br>
+<div id = "ss4" class="slideshow-container">
+<div id="ms4" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">element = 56 is introduced.</div> <br>
+<div style="display:inline-block;width:50px;color:teal">8</div> <div style="display:inline-block;">        (greater if element > pivot else lesser).append(element)
+</div> <br>
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">lesser = [] -> [56]</div> <br>
+</div>
+<div id="ms4" class="mySlides">
+<div style="display:inline-block;width:50px;color:teal">7</div> <div style="display:inline-block;">    for element in collection:
+</div> <br>
+</div>
+<a class="prev" onclick="plusSlides(-1,4)">&#10094;</a>
+<a class="next" onclick="plusSlides(1,4)">&#10095;</a>
+</div>
+<div style="display:inline-block;width:50px;color:teal">9</div> <div style="display:inline-block;">    return quick_sort(lesser) + [pivot] + quick_sort(greater)
+</div> <br>
+
+		<button onclick="myFunction('Demo9')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> [56]</button>
+    	<div id="Demo9" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">3</div> <div style="display:inline-block;">        return collection
+</div> <br>
+
+		</div>
+		<p>function quick_sort returned [56]</p>
+		
+
+		<button onclick="myFunction('Demo10')" class="w3-btn w3-block w3-green w3-left-align">quick_sort called quick_sort with arguments<br>collection -> []</button>
+    	<div id="Demo10" class="w3-container w3-hide" style="margin-left:10px;border-left-style:solid;border-left-width:10px;border-left-color: rgba(0, 128, 0, 0.3);">
+		
+<div style="display:inline-block;width:50px;"></div> <div style="display:inline-block;">collection = [56] -> []</div> <br>
+<div style="display:inline-block;width:50px;color:teal">2</div> <div style="display:inline-block;">    if len(collection) < 2:
+</div> <br>
+<div style="display:inline-block;width:50px;color:teal">3</div> <div style="display:inline-block;">        return collection
+</div> <br>
+
+		</div>
+		<p>function quick_sort returned []</p>
+		
+
+		</div>
+		<p>function quick_sort returned [56, 87]</p>
+		
+
+		</div>
+		<p>function quick_sort returned [44, 56, 87]</p>
+		
+
+		</div>
+		<p>function quick_sort returned [5, 13, 24, 32, 42, 44, 56, 87]</p>
+		
+[5, 13, 24, 32, 42, 44, 56, 87]
 <script>
-var ss_count = 4;
+var ss_count = 5;
 function myFunction(id) {
   var x = document.getElementById(id);
   if (x.className.indexOf("w3-show") == -1) {
@@ -335,7 +462,6 @@ function currentSlide(n,i) {
 
 function showSlides(n,i) {
   var k;
-  //var slides = document.getElementById("ss"+i).getElementsByClassName("m);
   var slides = document.getElementById("ss"+i).querySelectorAll('#ms'+i);
   console.log(slides)
   if (n > slides.length) {slideIndex[i] = 1}
