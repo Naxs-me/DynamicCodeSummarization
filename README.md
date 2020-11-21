@@ -38,13 +38,13 @@ With the help of *COSPEX*, developers can summarize the code snippet at hand fro
 <img width=500 alt="classes" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
 
 ## Important files in *COSPEX* Repository:
-In the lib folder,   
+In the lib directory,   
 "my-second-package.js" file contains all the source code related to activating and deactivating the package, extracting user's code, combining it into the hook and initiating summary generation.
 
-In the lib folder, 
+In the lib directory,   
 "injectCodepython.txt" file includes the code related to tracing the execution of the input code snippet.
 
-In the keymap folder,
+In the keymaps directory,   
 "my-second-package.json" file contains the shortcut key to trigger the package.
 
 ## Steps to install *COSPEX*:
