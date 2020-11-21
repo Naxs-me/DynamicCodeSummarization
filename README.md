@@ -35,7 +35,7 @@ With the help of *COSPEX*, developers can summarize the code snippet at hand fro
 
 
 ## Summary generated for QuickSort program:
-<img width=500 alt="classes" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
+<img width=600 alt="classes" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
 
 ## Important files in *COSPEX* Repository:
 In the lib directory,   
