@@ -35,8 +35,12 @@ With the help of *COSPEX*, developers can summarize the code snippet at hand fro
 
 
 ## Summary generated for QuickSort program:
+<figure>
 <img width=500 alt="Summary" src="https://user-images.githubusercontent.com/35232831/99877378-ce352900-2c23-11eb-9839-7ac4a324ea2e.png">
+<figcaption>
 Part of the generated output for Quick Sort program. [A] is the expanded view of the first collapsible block and hence includes lower level information as well. [B] is the sliding-window interface for loops. [C] represent the high level information for the first recursive call. [H] shows the value returned by the function shown in [A]. [D] shows the arrows using which we can navigate through iterations of the loop.[E] highlights the line number of the corresponding line of code. [F] contains the line of code. [G] highlights our natural language description for the change in variables due to [F]. [I] shows the final output of the code.
+</figcaption>
+</figure>
 
 ## Important files in *COSPEX* Repository:
 In the lib directory,   
@@ -51,7 +55,7 @@ In the keymaps directory,
 ## Steps to install *COSPEX*:
 1. Download and install *Atom* on your local machine.
 2. Download the repository on your local machine.  
-3. Unzip the folder and extract the package to the package repository of *Atom*(Default for Windows: C:\Users\<user_name>\\.atom\packages\)
+3. Unzip the folder and extract the package to the package repository of *Atom*(Default for Windows: C:\Users\<user_name>\ .atom\packages\ )
 4. Run "npm install" inside the package directory.
 5. Open Atom or refresh Atom if it was already open.
 
