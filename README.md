@@ -1,3 +1,19 @@
+# COSPEX - Code Summarization via Program Execution
+
+## What is COSPEX?
+1. COSPEX, is an *Atom* IDE extension, that generates summaries for Python code snippets dynamically.
+2. The current version takes source code snippet and test cases as input from developers.
+3. Automated test case inputs can be added in the future to COSPEX.
+
+## Features of COSPEX:
+1. COSPEX dynamically extracts dynamic information such as inputs, outputs, comments (if present in the snippet) alongwith changes in variable values during runtime. 
+2. Presents the dynamic information in the form of examples to the developers while also adding natural language phrases using pre-defined templates.
+3. Provides sliding window interface for loops where each window represents an iteration of the loop.
+
+## Uses of COSPEX:
+Developers rely on code documentation to understand the functionality of the code snippet. However, manually creating and maintaining the documentation is effort-intensive and prone to errors. 
+COSPEX aids developers to automatically generate summaries of the code snippets dynamically.
+With the help of COSPEX, developers can summarize the code snippet at hand from the editor environment itself.
 ## Working of COSPEX:
 COSPEX is developed as a package for Atom using the following approach:
 
